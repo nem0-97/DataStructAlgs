@@ -11,6 +11,7 @@ function test(){
   g.addVertices([v3,v4]);
   g.addEdge(v,v2,3);
   v2.addEdge(v1,4);
+  //v1.addEdge(v,-4);
   v1.addEdge(v3,4);
   v3.addEdge(v4,4);
   //0->2->1->3->4
@@ -19,6 +20,12 @@ function test(){
   console.log(g.aStar(v,v3,function(s,g){return Math.sqrt(Math.pow((v1.data.x-v.data.x),2)+Math.pow((v1.data.y-v.data.y),2)) ;}));
   console.log(g.djikstras(v,v3));
   console.log(g.djikstras(v));
+  console.log(g.dag(v,v3));
+  console.log(g.dag(v));
+  console.log(g.bellmanFord(v,v3));
+  console.log(g.bellmanFord(v));
   //works
+  //to implement and test:floydwarshall,dfsTop, kruskals
+
 }
 test();
